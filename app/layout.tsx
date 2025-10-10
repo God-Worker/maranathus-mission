@@ -27,11 +27,6 @@ function Nav() {
           <Link href="/news">소식</Link>
           <Link href="/contact">문의</Link>
         </div>
-        <div className="actions" aria-label="actions">
-          <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4" strokeWidth="2"/><path d="M4 20c2-4 14-4 16 0" strokeWidth="2"/></svg>
-          <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" strokeWidth="2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" strokeWidth="2"/></svg>
-          <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7h18M3 12h18M3 17h18" strokeWidth="2"/></svg>
-        </div>
       </div>
     </nav>
   );
