@@ -19,7 +19,11 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="bar">
+<<<<<<< HEAD
         {/* 좌측 로고 → 홈으로 이동 */}
+=======
+        {/* 좌측 로고 → 홈 이동 */}
+>>>>>>> 4041bcb (feat(nav): add fixed glass navbar + brand logo link to home)
         <Link href="/" className="brand" aria-label="Go to home">
           <Image src="/brand-logo.png" alt="Maranathus logo" width={32} height={32} />
           <span>Maranathus</span>
@@ -35,18 +39,27 @@ function Nav() {
           <Link href="#jobs">채용</Link>
         </div>
 
+<<<<<<< HEAD
         {/* 우측 액션 (아이콘) */}
         <div className="actions" aria-label="actions">
           {/* 사용자 */}
+=======
+        {/* 우측 아이콘 */}
+        <div className="actions" aria-label="actions">
+>>>>>>> 4041bcb (feat(nav): add fixed glass navbar + brand logo link to home)
           <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="12" cy="8" r="4" strokeWidth="2" />
             <path d="M4 20c2-4 14-4 16 0" strokeWidth="2" />
           </svg>
+<<<<<<< HEAD
           {/* 글로벌 */}
+=======
+>>>>>>> 4041bcb (feat(nav): add fixed glass navbar + brand logo link to home)
           <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="12" cy="12" r="9" strokeWidth="2" />
             <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" strokeWidth="2" />
           </svg>
+<<<<<<< HEAD
 
 cat > app/layout.tsx <<'EOF'
 export const metadata = {
@@ -99,6 +112,8 @@ function Nav() {
             <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" strokeWidth="2" />
           </svg>
           {/* 메뉴 햄버거 */}
+=======
+>>>>>>> 4041bcb (feat(nav): add fixed glass navbar + brand logo link to home)
           <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M3 7h18M3 12h18M3 17h18" strokeWidth="2" />
           </svg>
