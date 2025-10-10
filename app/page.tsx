@@ -16,12 +16,21 @@ export default function Home() {
           <span className="kicker">Maranathus Mission</span>
         </div>
 
-        <h1 className="title">강렬함과 단순함으로<br/>마음을 사로잡다</h1>
+        {/* 메인 타이틀 */}
+        <h1 className="title">하늘의 메시지, 세상과 연결되다.</h1>
+
+        {/* 본문: 한글 중심 + ΙΧΘΥΣ 표기 */}
         <p className="subtitle">
-          Maranatha (“주 예수여 오시옵소서”)와 Ichthus (“예수 그리스도, 하나님의 아들, 구주”).<br/>
-          두 고백이 만나는, 신앙·공유·커머스의 하나된 시작.
+          Maranatha(“주 예수여 오시옵소서”)와 Ichthus(ΙΧΘΥΣ, “예수 그리스도, 하나님의 아들, 구주”).<br/>
+          두 고백이 하나로 흐르는 거룩한 연결, <strong>Maranathus Mission</strong>.
         </p>
 
+        {/* 영문 서브라인 (디자인 톤 강화) */}
+        <p className="subtitle subtitle--en">
+          Heaven’s Message, Connected to the World.
+        </p>
+
+        {/* CTA */}
         <div className="cta">
           <Link href="#start" className="btn btn--primary">시작하기</Link>
           <Link href="/api/health" className="btn">상태 확인</Link>
