@@ -70,3 +70,79 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   filter: brightness(0.6) contrast(1.1);
 }
+
+/* ====== PATTERN / LAYOUT ====== */
+.section { padding: clamp(36px, 6vw, 80px) 24px; position: relative; }
+.container { max-width: 1160px; margin: 0 auto; }
+.pattern {
+  background-image:
+    radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* ====== HERO ====== */
+.hero--overlay {
+  position: relative;
+  min-height: 72vh;
+  display: grid;
+  align-items: end;
+  padding: clamp(36px, 6vw, 72px) 24px;
+  isolation: isolate;
+}
+.hero--overlay .shade {
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, rgba(11,15,26,0.2), rgba(11,15,26,0.85) 60%, #0b0f1a 100%);
+}
+.hero--overlay .content { z-index:1; }
+.k-title { font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height:1.1; }
+.k-desc { margin-top: 10px; color: var(--muted); }
+
+/* ====== CARD STRIP ====== */
+.card-strip { display:grid; gap: 18px; grid-template-columns: repeat(4, minmax(0,1fr)); }
+@media (max-width: 960px) { .card-strip { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 560px) { .card-strip { grid-template-columns: 1fr; } }
+
+.card {
+  background: #0f162b;
+  border: 1px solid #26324b;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.card .thumb {
+  aspect-ratio: 4/5;
+  border-bottom: 1px solid #26324b;
+  background: linear-gradient(135deg, #233048, #151d33);
+  position: relative;
+}
+.card .thumb img { object-fit: cover; }
+.card .body { padding: 16px; }
+.card h3 { margin: 2px 0 6px; font-size: 16px; }
+.card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+/* 샘플 썸네일 색감 */
+.thumb-a { background: radial-gradient(60% 80% at 30% 20%, #6ee7ff33, #1a223a 60%) }
+.thumb-b { background: radial-gradient(70% 80% at 60% 30%, #a78bfa33, #1a223a 60%) }
+.thumb-c { background: radial-gradient(65% 70% at 40% 60%, #60a5fa33, #1a223a 60%) }
+.thumb-d { background: radial-gradient(60% 70% at 70% 50%, #22d3ee33, #1a223a 60%) }
+
+/* ====== SPLIT / TECH ====== */
+.split {
+  display:grid; gap: 28px; align-items:center;
+  grid-template-columns: 1.2fr 1fr;
+}
+@media (max-width: 960px){ .split { grid-template-columns: 1fr; } }
+
+.panel {
+  border-radius: 18px; border:1px solid #26324b; overflow:hidden;
+  background: linear-gradient(180deg, #0f162b, #0e1427);
+}
+.panel .thumb { aspect-ratio: 4/3; }
+.panel .thumb img { object-fit: cover; }
+.panel .body { padding: 20px; }
+.panel h3 { margin: 0 0 6px; font-size: 18px; }
+.panel p { margin: 0; color: var(--muted); }
+
+/* 버튼 살짝 업그레이드 */
+.btn { transition: transform .12s ease, box-shadow .12s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(142,197,255,.18); }
