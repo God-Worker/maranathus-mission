@@ -19,12 +19,13 @@ function Nav() {
           <span>Maranathus</span>
         </Link>
         <div className="menu">
-          <Link href="#about">회사소개</Link>
-          <Link href="#business">비즈니스</Link>
-          <Link href="#meta">META · AI · XR</Link>
-          <Link href="#news">소식</Link>
-          <Link href="#contact">문의/제휴</Link>
-          <Link href="#jobs">채용</Link>
+          <Link href="/about">소개</Link>
+          <Link href="/media">미디어</Link>
+          <Link href="/community">커뮤니티</Link>
+          <Link href="/store">스토어</Link>
+          <Link href="/donate">후원</Link>
+          <Link href="/news">소식</Link>
+          <Link href="/contact">문의</Link>
         </div>
         <div className="actions" aria-label="actions">
           <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4" strokeWidth="2"/><path d="M4 20c2-4 14-4 16 0" strokeWidth="2"/></svg>
