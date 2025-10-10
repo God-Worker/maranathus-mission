@@ -55,3 +55,22 @@ a{color:inherit;text-decoration:none}
 .cta{margin-top:22px;display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .btn{padding:10px 16px;border-radius:10px;border:1px solid #26324b;background:#0f162b}
 .btn--primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#0b0f1a;font-weight:700}
+
+/* === Hero watermark responsive tuning === */
+.watermark{
+  --hero-zoom: 1.0;
+  transform: scale(var(--hero-zoom));
+  transform-origin: center;
+}
+/* 1280px 이상: 살짝 축소 + 위로 2% 올림 */
+@media (min-width: 1280px){
+  .watermark{ --hero-zoom: .92; }
+}
+/* 1536px 이상: 더 축소 */
+@media (min-width: 1536px){
+  .watermark{ --hero-zoom: .86; }
+}
+/* 1920px 이상: 더 축소 */
+@media (min-width: 1920px){
+  .watermark{ --hero-zoom: .82; }
+}
