@@ -200,3 +200,23 @@ a { color: inherit; text-decoration: none; }
 /* 히어로가 네비에 가리지 않도록 */
 >>>>>>> 4041bcb (feat(nav): add fixed glass navbar + brand logo link to home)
 .hero, .hero--overlay { padding-top: calc(64px + 24px); }
+
+/* nav 메뉴 보정 */
+.nav .menu a {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  position: relative;
+}
+.nav .menu a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  opacity: 0; transform: translateY(4px);
+  transition: .18s ease;
+}
+.nav .menu a:hover::after { opacity: 1; transform: translateY(0); }
+
+/* 로고 살짝 키우기(원하면 36→40/44로 조절) */
+.nav .brand img { width: 36px; height: 36px; }
+.nav { height: 68px; }                 /* 상단바 약간 키움 */
+.hero, .hero--overlay { padding-top: calc(68px + 24px); }  /* 가림 방지 */
