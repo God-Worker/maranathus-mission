@@ -37,3 +37,6 @@ Visit http://localhost:3000
 - The landing page **does not** require any secret keys to run.
 - Payments and database features are **scaffolded but not active** until you wire providers.
 - Place future modules under folders like `/app/shop`, `/app/community`, `/services/payments`.
+
+## Deploy Check
+- Sat Oct 11 18:13:13 KST 2025
