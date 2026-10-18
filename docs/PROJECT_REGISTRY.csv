@@ -1,0 +1,14 @@
+id,division,project,source_repo,execution_target,verification,rollout_state
+P01,ProductTech,Bible Quest NOAH,God-Worker/bible-quest-noah,God-Worker Bedrock and cloud static tests,pack validation and multiplayer gameplay,INVENTORY
+P02,ProductTech,Mobile 001,God-Worker/maranathus-mobile,God-Worker Android and cloud static checks,launch and HUD regression,INVENTORY
+P03,ProductTech,Living Word,God-Worker/maranathus-mobile,God-Worker Unity and cloud static checks,EditMode PlayMode and build integrity,INVENTORY
+P04,ProductTech,MARANATHUS BIBLE,UNASSIGNED,cloud web CI,original-language dataset provenance and UI tests,REPO_NEEDED
+P05,ProductTech,Cheongbing,God-Worker/-maranathus-cheongbing,cloud CI,collector fixtures and source links,INVENTORY
+P06,ProductTech,Worship Setlist,UNASSIGNED,cloud web CI,search sharing and score licensing,REPO_NEEDED
+P07,ProductTech,Website,God-Worker/maranathus-mission,cloud CI,build and link tests,INVENTORY
+C01,ContentMedia,Torah Portion,UNASSIGNED,editorial review,Hebrew provenance and theological review,INVENTORY
+C02,ContentMedia,Sermons,UNASSIGNED,editorial review,scripture citation and theological review,INVENTORY
+C03,ContentMedia,Suno Music,UNASSIGNED,local and service workflow,rights and release approval,INVENTORY
+B01,BusinessOps,Support Applications,UNASSIGNED,document workflow,deadline and submission approval,INVENTORY
+B02,BusinessOps,Crypto Paper Research,UNASSIGNED,isolated paper-only workflow,market data and risk audit,INVENTORY
+B03,BusinessOps,Infrastructure and Security,God-Worker/maranathus-mission,GitHub and God-Worker,least privilege uptime and budget,INVENTORY
