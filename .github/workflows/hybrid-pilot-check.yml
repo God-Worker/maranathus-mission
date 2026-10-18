@@ -1,0 +1,25 @@
+name: Hybrid Pilot Validation
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'docs/AUTODEV_ARCHITECTURE.md'
+      - 'docs/AUTODEV_RUNBOOK.md'
+      - '.github/workflows/hybrid-pilot-check.yml'
+permissions:
+  contents: read
+jobs:
+  verify-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pilot documentation
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s docs/AUTODEV_ARCHITECTURE.md
+          test -s docs/AUTODEV_RUNBOOK.md
+          grep -q 'No unattended writes to main' docs/AUTODEV_ARCHITECTURE.md
+          grep -q 'STOP' docs/AUTODEV_RUNBOOK.md
+          echo "Pilot validation passed; no code build claimed."
