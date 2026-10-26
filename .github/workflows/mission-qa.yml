@@ -69,7 +69,7 @@ jobs:
           for (const path of ['/', '/about', '/media', '/community', '/store', '/donate', '/news', '/contact']) {
             const response = await fetch(`${base}${path}`);
             assert.equal(response.status, 200, `${path} returned ${response.status}`);
-            assert.match(response.headers.get('content-type') ?? '', /text\\/html/i, `${path} should return HTML`);
+            assert.match(response.headers.get('content-type') ?? '', /text[/]html/i, `${path} should return HTML`);
             const html = await response.text();
             assert.doesNotMatch(html, /maranathus[.]example|000-0000-000000/i, `${path} exposes placeholder contact or bank details`);
             if (path === '/donate' || path === '/contact') {
