@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/mission-qa.yml'
       - 'app/**'
+      - '.github/workflows/mission-qa.yml'
       - 'package.json'
       - 'package-lock.json'
       - 'next.config.js'
@@ -38,3 +39,37 @@ jobs:
         run: npm run build
         env:
           NEXT_TELEMETRY_DISABLED: '1'
+
+      - name: Smoke-test production routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          node node_modules/next/dist/bin/next start -p 3210 -H 127.0.0.1 > /tmp/mission-next.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=0
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --max-time 2 http://127.0.0.1:3210/api/health > /dev/null; then
+              ready=1
+              break
+            fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            cat /tmp/mission-next.log
+            exit 1
+          fi
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          const base = 'http://127.0.0.1:3210';
+          const health = await fetch(`${base}/api/health`);
+          assert.equal(health.status, 200);
+          const data = await health.json();
+          assert.equal(data.ok, true);
+          assert.equal(data.service, 'maranathus-mission');
+          for (const path of ['/', '/about', '/media', '/community', '/store', '/donate', '/news', '/contact']) {
+            const response = await fetch(`${base}${path}`);
+            assert.equal(response.status, 200, `${path} returned ${response.status}`);
+            console.log(`PASS ${path}`);
+          }
+          NODE
