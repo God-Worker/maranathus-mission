@@ -72,6 +72,9 @@ jobs:
             assert.match(response.headers.get('content-type') ?? '', /text[/]html/i, `${path} should return HTML`);
             const html = await response.text();
             assert.doesNotMatch(html, /maranathus[.]example|000-0000-000000/i, `${path} exposes placeholder contact or bank details`);
+            if (path === '/') {
+              assert.match(html, /<a\b[^>]*href="\/media"[^>]*>시작하기<\/a>/u, 'homepage start CTA must link to /media');
+            }
             if (path === '/donate' || path === '/contact') {
               assert.match(html, /준비 중/, `${path} should explain that official details are pending`);
             }
