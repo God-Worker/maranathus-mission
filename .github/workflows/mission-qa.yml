@@ -72,7 +72,7 @@ jobs:
             assert.equal(response.status, 200, `${path} returned ${response.status}`);
             if (path === '/donate' || path === '/contact') {
               const html = await response.text();
-              assert.doesNotMatch(html, /maranathus\\.example|000-0000-000000/i, `${path} exposes placeholder contact or bank details`);
+              assert.doesNotMatch(html, /maranathus[.]example|000-0000-000000/i, `${path} exposes placeholder contact or bank details`);
               assert.match(html, /준비 중/, `${path} should explain that official details are pending`);
             }
             console.log(`PASS ${path}`);
