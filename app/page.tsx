@@ -21,7 +21,7 @@ export default function Home() {
         </p>
 
         <div className="cta">
-          <Link href="#media" className="btn btn--primary">시작하기</Link>
+          <Link href="/media" className="btn btn--primary">시작하기</Link>
           <Link href="/api/health" className="btn">상태 확인</Link>
         </div>
       </div>
